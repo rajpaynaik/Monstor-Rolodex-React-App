@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import './App.css'
-import Card from './components/card-list/card-list.components'
+import Card from './components/card/card-list.components'
 import Search from './components/search-box/search-box.component'
 
 class App extends Component {
@@ -33,6 +33,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1 className="app-title">Monstor Rolodex</h1>
         <Search
           onSearchHandler={this.onSearchChange}
           classSearchName={'search-box'}
