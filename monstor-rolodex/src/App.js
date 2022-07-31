@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import './App.css'
 import Card from './components/card-list/card-list.components'
+import Search from './components/search-box/search-box.component'
 
 class App extends Component {
   constructor() {
@@ -22,7 +23,6 @@ class App extends Component {
 
   onSearchChange = (event) => {
     const searchS = event.target.value.toLocaleLowerCase()
-
     this.setState({ searchString: searchS })
   }
 
@@ -33,11 +33,10 @@ class App extends Component {
 
     return (
       <div className="App">
-        <input
-          className="search-box"
-          type="search"
-          placeholder="search monster"
-          onChange={this.onSearchChange}
+        <Search
+          onSearchHandler={this.onSearchChange}
+          classSearchName={'search-box'}
+          placeHolder={'search monster'}
         />
         <Card monsters={filteredMonsters} />
       </div>
